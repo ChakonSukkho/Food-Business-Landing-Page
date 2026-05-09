@@ -535,6 +535,7 @@ ul { list-style: none; }
   pointer-events: none;
 }
 
+
 .img-label {
   font-family: var(--font-display);
   font-size: 0.85rem;
@@ -609,6 +610,28 @@ ul { list-style: none; }
   color: rgba(255,255,255,0.75);
 }
 
+.about-real-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  z-index: 1;
+}
+
+/* keep the Est. label floating above the image */
+.about-img-placeholder .img-label {
+  position: relative;
+  z-index: 2;
+}
+ 
+/* hide the scissors watermark when a real image is present */
+.about-img-placeholder:has(img.about-real-img)::before {
+  display: none;
+}
+
 .about-list i { color: var(--gold); font-size: 1.1rem; }
 
 /* ---------- Gallery ---------- */
@@ -645,6 +668,34 @@ ul { list-style: none; }
   background: linear-gradient(145deg, #1a1a1a 0%, #111 100%);
   color: rgba(201,168,76,0.3);
   transition: var(--transition);
+}
+
+/* ── Gallery: real images fill each cell ── */
+.gallery-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  transition: transform var(--transition);
+}
+ 
+/* hide the icon placeholder once image loads */
+.gallery-item:has(img.gallery-img) .gallery-placeholder {
+  opacity: 0;
+  pointer-events: none;
+}
+ 
+/* zoom the real image on hover instead of the placeholder */
+.gallery-item:hover .gallery-img {
+  transform: scale(1.06);
+}
+ 
+/* overlay sits above the image */
+.gallery-overlay {
+  z-index: 2;
 }
 
 .gallery-placeholder i { font-size: 2rem; }
