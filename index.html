@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FadeLab Barbers – Modern Cuts for Modern Men</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Google Fonts: Playfair Display (display) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Remix Icons for social + service icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
@@ -34,10 +32,23 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
-    <!-- Diagonal gold bar overlay -->
+
+    <!-- VIDEO BACKGROUND — rename your file to hero-bg.mp4 inside /uploads/ -->
+    <video
+      class="hero-video"
+      src="uploads/hero-bg.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      poster="uploads/hero-poster.jpg"
+    ></video>
+
+    <!-- Layered dark overlay: left-heavy + top + bottom fades -->
+    <div class="hero-video-overlay"></div>
+
+    <!-- Diagonal gold accent bar -->
     <div class="hero-overlay"></div>
-    <!-- Noise texture -->
-    <div class="hero-noise"></div>
 
     <div class="hero-content">
       <p class="hero-eyebrow">Est. 2018 · Kuala Lumpur</p>
@@ -52,14 +63,13 @@
       </div>
     </div>
 
-    <!-- Decorative vertical text -->
     <span class="hero-vertical-text">Premium · Precision · Style</span>
 
-    <!-- Scroll indicator -->
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       <span>Scroll</span>
     </div>
+
   </section>
 
   <!-- ========== SERVICES ========== -->
@@ -72,32 +82,23 @@
 
       <div class="services-grid">
 
-        <!-- Service 1 -->
         <div class="service-card" data-reveal>
-          <div class="service-icon">
-            <i class="ri-scissors-cut-fill"></i>
-          </div>
+          <div class="service-icon"><i class="ri-scissors-cut-fill"></i></div>
           <h3>Haircut</h3>
           <p>Precision haircuts tailored to your face shape, lifestyle, and personal style. Classic or contemporary — we've got you covered.</p>
           <span class="service-price">From RM 25</span>
         </div>
 
-        <!-- Service 2 -->
         <div class="service-card featured" data-reveal>
           <div class="service-badge">Most Popular</div>
-          <div class="service-icon">
-            <i class="ri-magic-fill"></i>
-          </div>
+          <div class="service-icon"><i class="ri-magic-fill"></i></div>
           <h3>Skin Fade</h3>
           <p>Our signature skin fade — seamlessly blended from zero to your desired length. Clean lines, sharp finishes, every time.</p>
           <span class="service-price">From RM 35</span>
         </div>
 
-        <!-- Service 3 -->
         <div class="service-card" data-reveal>
-          <div class="service-icon">
-            <i class="ri-user-3-fill"></i>
-          </div>
+          <div class="service-icon"><i class="ri-user-3-fill"></i></div>
           <h3>Beard Trim</h3>
           <p>Sculpted beard shaping, hot-towel treatment, and razor edge-up for a clean, defined look that commands respect.</p>
           <span class="service-price">From RM 20</span>
@@ -110,9 +111,8 @@
   <!-- ========== ABOUT ========== -->
   <section class="about section" id="about">
     <div class="container about-grid">
- 
+
       <div class="about-image-wrap" data-reveal>
-        <!-- Real image fills the placeholder frame -->
         <div class="about-img-placeholder">
           <img src="uploads/barber1.jpg" alt="FadeLab Barber" class="about-real-img" />
           <div class="img-label">Est. 2018</div>
@@ -127,7 +127,7 @@
           <span class="stat-desc">Years of Craft</span>
         </div>
       </div>
- 
+
       <div class="about-content" data-reveal>
         <p class="section-label">Our Story</p>
         <h2 class="section-title">More Than a <span class="gold">Haircut</span></h2>
@@ -145,20 +145,20 @@
         </ul>
         <a href="#contact" class="btn btn-primary">Meet the Team</a>
       </div>
- 
+
     </div>
   </section>
 
-<!-- ========== GALLERY ========== -->
+  <!-- ========== GALLERY ========== -->
   <section class="gallery section" id="gallery">
     <div class="container">
       <div class="section-header">
         <p class="section-label">Fresh Cuts</p>
         <h2 class="section-title">The <span class="gold">Gallery</span></h2>
       </div>
- 
+
       <div class="gallery-grid">
- 
+
         <div class="gallery-item tall" data-reveal>
           <img src="uploads/skinfade.jpg" alt="Skin Fade" class="gallery-img" />
           <div class="gallery-placeholder">
@@ -167,7 +167,7 @@
           </div>
           <div class="gallery-overlay"><span>Skin Fade</span></div>
         </div>
- 
+
         <div class="gallery-item" data-reveal>
           <img src="uploads/classiccut.jpg" alt="Classic Cut" class="gallery-img" />
           <div class="gallery-placeholder">
@@ -176,7 +176,7 @@
           </div>
           <div class="gallery-overlay"><span>Classic Cut</span></div>
         </div>
- 
+
         <div class="gallery-item" data-reveal>
           <img src="uploads/Textured_Top.jpg" alt="Textured Top" class="gallery-img" />
           <div class="gallery-placeholder">
@@ -185,7 +185,7 @@
           </div>
           <div class="gallery-overlay"><span>Textured Top</span></div>
         </div>
- 
+
         <div class="gallery-item wide" data-reveal>
           <img src="uploads/BreadSculpt.jpg" alt="Beard Sculpt" class="gallery-img" />
           <div class="gallery-placeholder">
@@ -194,7 +194,7 @@
           </div>
           <div class="gallery-overlay"><span>Beard Sculpt</span></div>
         </div>
- 
+
         <div class="gallery-item" data-reveal>
           <img src="uploads/midfade.jpg" alt="Mid Fade" class="gallery-img" />
           <div class="gallery-placeholder">
@@ -203,7 +203,7 @@
           </div>
           <div class="gallery-overlay"><span>Mid Fade</span></div>
         </div>
- 
+
         <div class="gallery-item" data-reveal>
           <img src="uploads/TaperFade.jpg" alt="Taper Fade" class="gallery-img" />
           <div class="gallery-placeholder">
@@ -212,7 +212,7 @@
           </div>
           <div class="gallery-overlay"><span>Taper Fade</span></div>
         </div>
- 
+
       </div>
     </div>
   </section>
