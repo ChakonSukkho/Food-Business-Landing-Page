@@ -18,8 +18,8 @@
   --gray-light: #CCCCCC;
   --green-wa:   #25D366;
 
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body:    'DM Sans', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+  --font-body:    'Inter', sans-serif;
 
   --radius-sm:  4px;
   --radius:     10px;
@@ -65,8 +65,9 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(36px, 4.5vw, 60px);
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   color: var(--black);
 }
 .section-subtitle {
@@ -188,6 +189,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .nav-logo {
   font-family: var(--font-display);
   font-size: 26px;
+  font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--white);
   flex-shrink: 0;
@@ -313,9 +315,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .hero-title {
   font-family: var(--font-display);
   font-size: clamp(80px, 13vw, 156px);
+  font-weight: 800;
   line-height: 0.9;
   color: var(--white);
-  letter-spacing: 0.015em;
+  letter-spacing: -0.01em;
   margin-bottom: 24px;
 }
 .hero-title span { color: var(--red); }
@@ -493,7 +496,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .menu-info h3 {
   font-family: var(--font-display);
   font-size: 24px;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--black);
   margin-bottom: 6px;
 }
@@ -513,6 +517,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .menu-price {
   font-family: var(--font-display);
   font-size: 26px;
+  font-weight: 700;
   color: var(--red);
   letter-spacing: 0.02em;
 }
@@ -544,6 +549,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .side-price {
   font-family: var(--font-display);
   font-size: 22px;
+  font-weight: 700;
   color: var(--red);
   white-space: nowrap;
   margin-left: auto;
@@ -604,9 +610,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .promo-title {
   font-family: var(--font-display);
   font-size: clamp(64px, 9vw, 110px);
+  font-weight: 800;
   line-height: 0.92;
   color: var(--white);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 24px;
 }
 .promo-title em { font-style: normal; color: var(--red); }
@@ -652,6 +659,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .badge-num {
   font-family: var(--font-display);
   font-size: 88px;
+  font-weight: 800;
   line-height: 1;
   color: var(--white);
 }
@@ -726,6 +734,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .stat-num {
   font-family: var(--font-display);
   font-size: 30px;
+  font-weight: 700;
   color: var(--red);
   line-height: 1;
 }
@@ -829,6 +838,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .wa-header h3 {
   font-family: var(--font-display);
   font-size: 26px;
+  font-weight: 700;
   letter-spacing: 0.03em;
   color: var(--white);
   line-height: 1;
@@ -884,6 +894,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .footer-logo {
   font-family: var(--font-display);
   font-size: 28px;
+  font-weight: 700;
   letter-spacing: 0.05em;
   color: var(--white);
   margin-bottom: 10px;

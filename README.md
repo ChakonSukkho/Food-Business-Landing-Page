@@ -52,8 +52,8 @@ No build tools or installations needed.
 | **Primary Color** | `#E31B1B` (Red) |
 | **Background Dark** | `#0A0A0A` (Black) |
 | **Background Light** | `#FAFAFA` / `#F2F0EB` (White / Off-white) |
-| **Display Font** | [Bebas Neue](https://fonts.google.com/specimen/Bebas+Neue) |
-| **Body Font** | [DM Sans](https://fonts.google.com/specimen/DM+Sans) |
+| **Display Font** | [Poppins](https://fonts.google.com/specimen/Poppins) |
+| **Body Font** | [Inter](https://fonts.google.com/specimen/Inter) |
 | **Responsive** | Mobile-first, breakpoints at `480px`, `768px`, `1024px` |
 
 ---
