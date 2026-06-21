@@ -3,429 +3,471 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FadeLab Barbers – Modern Cuts for Modern Men</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Burger Byte — Fresh Daily</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ========== NAVBAR ========== -->
+  <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo">Fade<span>Lab</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Burger<span>Byte</span></a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#promo">Promo</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Order Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-        <li><a href="#contact" class="nav-cta">Book Now</a></li>
-      </ul>
     </div>
   </nav>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero" id="hero">
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#menu" onclick="closeMobile()">Menu</a></li>
+      <li><a href="#about" onclick="closeMobile()">About</a></li>
+      <li><a href="#promo" onclick="closeMobile()">Promo</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary" onclick="closeMobile()">Order Now</a>
+  </div>
 
-    <!-- VIDEO BACKGROUND — rename your file to hero-bg.mp4 inside /uploads/ -->
-    <video
-      class="hero-video"
-      src="uploads/hero-bg.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      poster="uploads/hero-poster.jpg"
-    ></video>
-
-    <!-- Layered dark overlay: left-heavy + top + bottom fades -->
-    <div class="hero-video-overlay"></div>
-
-    <!-- Diagonal gold accent bar -->
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="home">
     <div class="hero-overlay"></div>
-
     <div class="hero-content">
-      <p class="hero-eyebrow">Est. 2018 · Kuala Lumpur</p>
-      <h1 class="hero-title">
-        Fade<span class="gold">Lab</span><br />
-        <em>Barbers</em>
-      </h1>
-      <p class="hero-subtitle">Modern Cuts for Modern Men</p>
+      <p class="hero-eyebrow">Est. 2024 · Kuala Lumpur</p>
+      <h1 class="hero-title">Burger<br /><span>Byte</span></h1>
+      <p class="hero-tagline">Delicious Burgers Made Fresh Daily</p>
       <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary">Book Appointment</a>
-        <a href="#services" class="btn btn-ghost">Our Services</a>
+        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+        <a href="https://wa.me/60123456789" class="btn btn-outline" target="_blank">Order via WhatsApp</a>
       </div>
     </div>
-
-    <span class="hero-vertical-text">Premium · Precision · Style</span>
-
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
+    <!-- Trust bar -->
+    <div class="hero-trust">
+      <div class="trust-item">
+        <span class="trust-icon">✅</span>
+        <span>100% Fresh Daily</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-icon">🍔</span>
+        <span>50K+ Served</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-icon">⭐</span>
+        <span>4.9 Rating</span>
+      </div>
     </div>
-
   </section>
 
-  <!-- ========== SERVICES ========== -->
-  <section class="services section" id="services">
+  <!-- ===================== MENU SECTION ===================== -->
+  <section class="menu" id="menu">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">What We Do</p>
-        <h2 class="section-title">Our <span class="gold">Services</span></h2>
+        <p class="section-label">What We Serve</p>
+        <h2 class="section-title">Our Menu</h2>
+        <p class="section-subtitle">Handcrafted with the freshest ingredients, every single day.</p>
       </div>
 
-      <div class="services-grid">
+      <!-- Tabs -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" data-tab="burgers">🍔 Burgers</button>
+        <button class="tab-btn" data-tab="chicken">🍗 Chicken</button>
+        <button class="tab-btn" data-tab="sides">🍟 Sides & Drinks</button>
+      </div>
 
-        <div class="service-card" data-reveal>
-          <div class="service-icon"><i class="ri-scissors-cut-fill"></i></div>
-          <h3>Haircut</h3>
-          <p>Precision haircuts tailored to your face shape, lifestyle, and personal style. Classic or contemporary — we've got you covered.</p>
-          <span class="service-price">From RM 25</span>
+      <!-- === BURGERS === -->
+      <div class="tab-content active" id="tab-burgers">
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--1"></div>
+              <span class="menu-tag bestseller">⭐ Fan Favourite</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">540 kcal</span></div>
+              <h3>The Classic Smash</h3>
+              <p>Double smash patty, American cheese, house pickles &amp; our secret Byte sauce.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 18.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--2"></div>
+              <span class="menu-tag spicy">🔥 Spicy</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">620 kcal</span><span class="menu-heat">🌶🌶</span></div>
+              <h3>Volcano Crunch</h3>
+              <p>Fried chicken thigh, jalapeños, sriracha mayo &amp; crunchy coleslaw on a brioche bun.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 16.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--3"></div>
+              <span class="menu-tag new">✨ New</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">710 kcal</span></div>
+              <h3>Truffle Royale</h3>
+              <p>Wagyu beef patty, truffle aioli, caramelised onion &amp; aged cheddar on a sesame bun.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 26.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--4"></div>
+              <span class="menu-tag veggie">🥑 Veggie</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">420 kcal</span></div>
+              <h3>Garden Beast</h3>
+              <p>Crispy plant patty, avocado smash, sun-dried tomato &amp; garlic aioli on a multigrain bun.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 19.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--5"></div>
+              <span class="menu-tag spicy">🔥 Extra Hot</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">680 kcal</span><span class="menu-heat">🌶🌶🌶</span></div>
+              <h3>Hell's Gate</h3>
+              <p>Triple patty, ghost pepper sauce, habanero rings, pepper jack cheese &amp; chipotle mayo.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 29.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--6"></div>
+              <span class="menu-tag bestseller">🧀 Must Try</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">590 kcal</span></div>
+              <h3>Cheesy Overflow</h3>
+              <p>Smash patty, four-cheese blend, cheese sauce waterfall, crispy onions &amp; mustard glaze.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 22.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="service-card featured" data-reveal>
-          <div class="service-badge">Most Popular</div>
-          <div class="service-icon"><i class="ri-magic-fill"></i></div>
-          <h3>Skin Fade</h3>
-          <p>Our signature skin fade — seamlessly blended from zero to your desired length. Clean lines, sharp finishes, every time.</p>
-          <span class="service-price">From RM 35</span>
+      <!-- === CHICKEN === -->
+      <div class="tab-content" id="tab-chicken">
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--c1"></div>
+              <span class="menu-tag bestseller">⭐ Popular</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">580 kcal</span></div>
+              <h3>Crispy Byte Chicken</h3>
+              <p>Buttermilk-brined fried chicken thigh, honey mustard, pickles &amp; shredded lettuce.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 15.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--c2"></div>
+              <span class="menu-tag spicy">🔥 Spicy</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">610 kcal</span><span class="menu-heat">🌶🌶</span></div>
+              <h3>Nashville Hot Thigh</h3>
+              <p>Nashville-spiced fried chicken, pickled cucumber, white slaw &amp; cayenne butter glaze.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 17.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <div class="menu-img menu-img--c3"></div>
+              <span class="menu-tag new">✨ New</span>
+            </div>
+            <div class="menu-info">
+              <div class="menu-meta"><span class="menu-cal">520 kcal</span></div>
+              <h3>Miso Glazed Chicken</h3>
+              <p>Grilled chicken breast, sweet miso glaze, sesame slaw, spring onion &amp; furikake.</p>
+              <div class="menu-footer">
+                <span class="menu-price">RM 18.90</span>
+                <a href="https://wa.me/60123456789" class="btn btn-sm" target="_blank">Order</a>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="service-card" data-reveal>
-          <div class="service-icon"><i class="ri-user-3-fill"></i></div>
-          <h3>Beard Trim</h3>
-          <p>Sculpted beard shaping, hot-towel treatment, and razor edge-up for a clean, defined look that commands respect.</p>
-          <span class="service-price">From RM 20</span>
+      <!-- === SIDES === -->
+      <div class="tab-content" id="tab-sides">
+        <div class="sides-grid">
+          <div class="side-card">
+            <div class="side-icon">🍟</div>
+            <div class="side-info">
+              <h4>Loaded Fries</h4>
+              <p>Crispy fries, cheese sauce, jalapeños &amp; chives</p>
+            </div>
+            <span class="side-price">RM 9.90</span>
+          </div>
+          <div class="side-card">
+            <div class="side-icon">🧅</div>
+            <div class="side-info">
+              <h4>Onion Rings</h4>
+              <p>Beer-battered golden rings, chipotle dip</p>
+            </div>
+            <span class="side-price">RM 8.90</span>
+          </div>
+          <div class="side-card">
+            <div class="side-icon">🥛</div>
+            <div class="side-info">
+              <h4>Thick Milkshake</h4>
+              <p>Chocolate / Vanilla / Strawberry / Oreo</p>
+            </div>
+            <span class="side-price">RM 12.90</span>
+          </div>
+          <div class="side-card">
+            <div class="side-icon">🥤</div>
+            <div class="side-info">
+              <h4>Soft Drinks</h4>
+              <p>Coke, Sprite, 100Plus, Milo Ais</p>
+            </div>
+            <span class="side-price">RM 4.90</span>
+          </div>
+          <div class="side-card">
+            <div class="side-icon">🍗</div>
+            <div class="side-info">
+              <h4>Chicken Bites (6pcs)</h4>
+              <p>Crispy nuggets, Byte sauce dip</p>
+            </div>
+            <span class="side-price">RM 10.90</span>
+          </div>
+          <div class="side-card">
+            <div class="side-icon">🥗</div>
+            <div class="side-info">
+              <h4>Side Salad</h4>
+              <p>Mixed greens, cherry tomato, balsamic dressing</p>
+            </div>
+            <span class="side-price">RM 7.90</span>
+          </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
-  <section class="about section" id="about">
+  <!-- ===================== PROMO SECTION ===================== -->
+  <section class="promo" id="promo">
+    <!-- Full-width ticker -->
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <span>🔥 BUY 1 FREE 1 TODAY ONLY</span><span class="dot">·</span>
+        <span>EVERY WEDNESDAY</span><span class="dot">·</span>
+        <span>DINE-IN &amp; TAKEAWAY</span><span class="dot">·</span>
+        <span>🔥 BUY 1 FREE 1 TODAY ONLY</span><span class="dot">·</span>
+        <span>EVERY WEDNESDAY</span><span class="dot">·</span>
+        <span>DINE-IN &amp; TAKEAWAY</span><span class="dot">·</span>
+        <span>🔥 BUY 1 FREE 1 TODAY ONLY</span><span class="dot">·</span>
+        <span>EVERY WEDNESDAY</span><span class="dot">·</span>
+        <span>DINE-IN &amp; TAKEAWAY</span><span class="dot">·</span>
+        <span>🔥 BUY 1 FREE 1 TODAY ONLY</span><span class="dot">·</span>
+        <span>EVERY WEDNESDAY</span><span class="dot">·</span>
+        <span>DINE-IN &amp; TAKEAWAY</span><span class="dot">·</span>
+      </div>
+    </div>
+
+    <div class="promo-body">
+      <div class="promo-text">
+        <p class="promo-label">Limited Weekly Offer</p>
+        <h2 class="promo-title">Buy 1<br /><em>Free 1</em></h2>
+        <p class="promo-desc">Every Wednesday — get a free burger of equal or lesser value with every purchase. Valid for dine-in &amp; takeaway. No code needed.</p>
+        <div class="promo-actions">
+          <a href="https://wa.me/60123456789" class="btn btn-light" target="_blank">Claim via WhatsApp</a>
+          <span class="promo-note">📅 Every Wednesday · While stocks last</span>
+        </div>
+      </div>
+      <div class="promo-visual">
+        <div class="promo-badge">
+          <span class="badge-num">2</span>
+          <span class="badge-label">for the<br/>price of</span>
+          <span class="badge-num">1</span>
+        </div>
+        <div class="promo-star s1">★</div>
+        <div class="promo-star s2">★</div>
+        <div class="promo-star s3">★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT SECTION ===================== -->
+  <section class="about" id="about">
     <div class="container about-grid">
-
-      <div class="about-image-wrap" data-reveal>
-        <div class="about-img-placeholder">
-          <img src="uploads/barber1.jpg" alt="FadeLab Barber" class="about-real-img" />
-          <div class="img-label">Est. 2018</div>
-        </div>
-        <div class="about-img-accent"></div>
-        <div class="stat-card stat-left">
-          <span class="stat-num">5K+</span>
-          <span class="stat-desc">Happy Clients</span>
-        </div>
-        <div class="stat-card stat-right">
-          <span class="stat-num">6+</span>
-          <span class="stat-desc">Years of Craft</span>
+      <div class="about-visual">
+        <div class="about-img-block"></div>
+        <div class="about-stat-block">
+          <div class="about-stat">
+            <span class="stat-num">50K+</span>
+            <span class="stat-label">Burgers Served</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="about-stat">
+            <span class="stat-num">4.9★</span>
+            <span class="stat-label">Avg Rating</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="about-stat">
+            <span class="stat-num">Daily</span>
+            <span class="stat-label">Fresh Ingredients</span>
+          </div>
         </div>
       </div>
-
-      <div class="about-content" data-reveal>
+      <div class="about-text">
         <p class="section-label">Our Story</p>
-        <h2 class="section-title">More Than a <span class="gold">Haircut</span></h2>
-        <p class="about-text">
-          FadeLab was born from a simple belief — every man deserves to walk out looking and feeling his best. We blended old-school barbering tradition with a sharp, modern aesthetic to create a space where craft meets culture.
-        </p>
-        <p class="about-text">
-          Our master barbers bring years of precision training and a passion for the craft. Whether it's your first visit or your fiftieth, expect nothing less than excellence — every single time.
-        </p>
-        <ul class="about-list">
-          <li><i class="ri-checkbox-circle-fill"></i> Master-trained barbers</li>
-          <li><i class="ri-checkbox-circle-fill"></i> Premium grooming products only</li>
-          <li><i class="ri-checkbox-circle-fill"></i> Relaxed, welcoming atmosphere</li>
-          <li><i class="ri-checkbox-circle-fill"></i> Walk-ins & appointments welcome</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Meet the Team</a>
+        <h2 class="section-title">Born From a Love<br />of Real Burgers</h2>
+        <p>Burger Byte started as a humble weekend pop-up in Kuala Lumpur, built on one belief — a great burger deserves great ingredients. We source our beef fresh daily, bake our buns in-house, and hand-craft every sauce from scratch.</p>
+        <p>No shortcuts, no freezers, no compromises. Today we serve hundreds of happy customers daily, but the heart of Burger Byte remains the same: honest food, made with care.</p>
+        <div class="about-badges">
+          <div class="about-badge">🥩 Fresh Beef Daily</div>
+          <div class="about-badge">🍞 House-Baked Buns</div>
+          <div class="about-badge">🫙 Handcrafted Sauces</div>
+          <div class="about-badge">🌿 Local Ingredients</div>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- ========== GALLERY ========== -->
-  <section class="gallery section" id="gallery">
+  <!-- ===================== CONTACT SECTION ===================== -->
+  <section class="contact" id="contact">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Fresh Cuts</p>
-        <h2 class="section-title">The <span class="gold">Gallery</span></h2>
+        <p class="section-label" style="color:var(--red)">Find Us</p>
+        <h2 class="section-title" style="color:var(--white)">Come &amp; Get Your Byte</h2>
       </div>
-
-      <div class="gallery-grid">
-
-        <div class="gallery-item tall" data-reveal>
-          <img src="uploads/skinfade.jpg" alt="Skin Fade" class="gallery-img" />
-          <div class="gallery-placeholder">
-            <i class="ri-camera-3-line"></i>
-            <span>Skin Fade</span>
-          </div>
-          <div class="gallery-overlay"><span>Skin Fade</span></div>
-        </div>
-
-        <div class="gallery-item" data-reveal>
-          <img src="uploads/classiccut.jpg" alt="Classic Cut" class="gallery-img" />
-          <div class="gallery-placeholder">
-            <i class="ri-camera-3-line"></i>
-            <span>Classic Cut</span>
-          </div>
-          <div class="gallery-overlay"><span>Classic Cut</span></div>
-        </div>
-
-        <div class="gallery-item" data-reveal>
-          <img src="uploads/Textured_Top.jpg" alt="Textured Top" class="gallery-img" />
-          <div class="gallery-placeholder">
-            <i class="ri-camera-3-line"></i>
-            <span>Textured Top</span>
-          </div>
-          <div class="gallery-overlay"><span>Textured Top</span></div>
-        </div>
-
-        <div class="gallery-item wide" data-reveal>
-          <img src="uploads/BreadSculpt.jpg" alt="Beard Sculpt" class="gallery-img" />
-          <div class="gallery-placeholder">
-            <i class="ri-camera-3-line"></i>
-            <span>Beard Sculpt</span>
-          </div>
-          <div class="gallery-overlay"><span>Beard Sculpt</span></div>
-        </div>
-
-        <div class="gallery-item" data-reveal>
-          <img src="uploads/midfade.jpg" alt="Mid Fade" class="gallery-img" />
-          <div class="gallery-placeholder">
-            <i class="ri-camera-3-line"></i>
-            <span>Mid Fade</span>
-          </div>
-          <div class="gallery-overlay"><span>Mid Fade</span></div>
-        </div>
-
-        <div class="gallery-item" data-reveal>
-          <img src="uploads/TaperFade.jpg" alt="Taper Fade" class="gallery-img" />
-          <div class="gallery-placeholder">
-            <i class="ri-camera-3-line"></i>
-            <span>Taper Fade</span>
-          </div>
-          <div class="gallery-overlay"><span>Taper Fade</span></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PRICING ========== -->
-  <section class="pricing section" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Transparent Rates</p>
-        <h2 class="section-title">Simple <span class="gold">Pricing</span></h2>
-      </div>
-
-      <div class="pricing-grid">
-
-        <div class="pricing-card" data-reveal>
-          <div class="pricing-tier">Classic</div>
-          <div class="pricing-price">RM 25</div>
-          <div class="pricing-desc">The essential cut</div>
-          <ul class="pricing-features">
-            <li><i class="ri-check-line"></i> Consultation</li>
-            <li><i class="ri-check-line"></i> Scissor / Clipper cut</li>
-            <li><i class="ri-check-line"></i> Styling finish</li>
-            <li class="disabled"><i class="ri-close-line"></i> Beard shaping</li>
-            <li class="disabled"><i class="ri-close-line"></i> Hot towel</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Book Now</a>
-        </div>
-
-        <div class="pricing-card featured" data-reveal>
-          <div class="pricing-badge">Best Value</div>
-          <div class="pricing-tier">Signature</div>
-          <div class="pricing-price">RM 55</div>
-          <div class="pricing-desc">Cut + Fade + Beard</div>
-          <ul class="pricing-features">
-            <li><i class="ri-check-line"></i> Consultation</li>
-            <li><i class="ri-check-line"></i> Precision skin fade</li>
-            <li><i class="ri-check-line"></i> Beard shaping</li>
-            <li><i class="ri-check-line"></i> Hot towel treatment</li>
-            <li><i class="ri-check-line"></i> Premium styling finish</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary">Book Now</a>
-        </div>
-
-        <div class="pricing-card" data-reveal>
-          <div class="pricing-tier">Fade Only</div>
-          <div class="pricing-price">RM 35</div>
-          <div class="pricing-desc">Pure precision fade</div>
-          <ul class="pricing-features">
-            <li><i class="ri-check-line"></i> Consultation</li>
-            <li><i class="ri-check-line"></i> Skin / Mid / High fade</li>
-            <li><i class="ri-check-line"></i> Line-up / Edge-up</li>
-            <li><i class="ri-check-line"></i> Styling finish</li>
-            <li class="disabled"><i class="ri-close-line"></i> Hot towel</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Book Now</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-label">Client Love</p>
-        <h2 class="section-title">What They <span class="gold">Say</span></h2>
-      </div>
-
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card" data-reveal>
-          <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
-          <p class="testimonial-text">Best fade I've had in KL. The attention to detail is insane — they spent extra time on my line-up without me even asking. FadeLab is my go-to for life.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">AH</div>
-            <div>
-              <strong>Ahmad Haziq</strong>
-              <span>Regular Client</span>
-            </div>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-
-        <div class="testimonial-card featured" data-reveal>
-          <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
-          <p class="testimonial-text">Walked in stressed, walked out looking like a CEO. The signature package is worth every ringgit — hot towel, beard sculpt, premium finish. Absolute class.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">RZ</div>
-            <div>
-              <strong>Razif Zulkifli</strong>
-              <span>Signature Client</span>
-            </div>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-
-        <div class="testimonial-card" data-reveal>
-          <div class="quote-icon"><i class="ri-double-quotes-l"></i></div>
-          <p class="testimonial-text">Super chill vibes, fast service, and the barber actually listened to what I wanted. My beard has never looked this clean. Highly recommend to everyone.</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">DL</div>
-            <div>
-              <strong>Daniel Lim</strong>
-              <span>Walk-in Client</span>
-            </div>
-            <div class="stars">★★★★★</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT ========== -->
-  <section class="contact section" id="contact">
-    <div class="container contact-grid">
-
-      <div class="contact-info" data-reveal>
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-title">Book Your <span class="gold">Session</span></h2>
-        <p class="contact-desc">Ready for a fresh cut? Drop us a message or slide into our WhatsApp — we'll confirm your slot in minutes.</p>
-
-        <div class="contact-details">
+      <div class="contact-grid">
+        <div class="contact-cards">
           <div class="contact-item">
-            <i class="ri-map-pin-2-fill"></i>
-            <span>123 Jalan Ampang, 50450 Kuala Lumpur</span>
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <p>No. 12, Jalan Burger Byte,<br />Taman Lezat, 55100 Kuala Lumpur</p>
+            </div>
           </div>
           <div class="contact-item">
-            <i class="ri-time-fill"></i>
-            <span>Mon – Sat: 9am – 9pm &nbsp;|&nbsp; Sun: 10am – 7pm</span>
+            <div class="contact-icon">🕐</div>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon – Sun: 11:00 AM – 10:00 PM</p>
+            </div>
           </div>
           <div class="contact-item">
-            <i class="ri-phone-fill"></i>
-            <span>+60 12-345 6789</span>
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong>Phone</strong>
+              <p>+60 12-345 6789</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <strong>Email</strong>
+              <p>hello@burgerbyte.my</p>
+            </div>
           </div>
         </div>
 
-        <a href="https://wa.me/60123456789" target="_blank" rel="noopener" class="btn btn-whatsapp">
-          <i class="ri-whatsapp-fill"></i> Chat on WhatsApp
-        </a>
+        <div class="wa-card">
+          <div class="wa-header">
+            <svg viewBox="0 0 24 24" width="44" height="44" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.59a.75.75 0 0 0 .914.914l5.763-1.49A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.717 9.717 0 0 1-4.989-1.376l-.356-.212-3.722.962.988-3.63-.232-.374A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            <div>
+              <h3>Order via WhatsApp</h3>
+              <p>We're online &amp; ready</p>
+            </div>
+          </div>
+          <p class="wa-desc">Place your order, ask about today's specials, or reserve a table — all through WhatsApp. Fast and easy.</p>
+          <a href="https://wa.me/60123456789" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.852L.057 23.59a.75.75 0 0 0 .914.914l5.763-1.49A11.944 11.944 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.717 9.717 0 0 1-4.989-1.376l-.356-.212-3.722.962.988-3.63-.232-.374A9.713 9.713 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Chat on WhatsApp
+          </a>
+          <div class="wa-social">
+            <span>Also follow us:</span>
+            <a href="#" class="social-pill">📸 Instagram</a>
+            <a href="#" class="social-pill">📘 Facebook</a>
+          </div>
+        </div>
       </div>
-
-      <div class="contact-form-wrap" data-reveal>
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Ahmad Haziq" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="ahmad@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="service">Service</label>
-            <select id="service" name="service">
-              <option value="">Select a service…</option>
-              <option>Classic Haircut (RM 25)</option>
-              <option>Skin Fade (RM 35)</option>
-              <option>Beard Trim (RM 20)</option>
-              <option>Signature Package (RM 55)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Preferred date, time, or any special requests…"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <span class="btn-text">Send Booking Request</span>
-            <i class="ri-send-plane-fill"></i>
-          </button>
-          <p class="form-note" id="formNote"></p>
-        </form>
-      </div>
-
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <a href="#hero" class="nav-logo footer-logo">Fade<span>Lab</span></a>
-        <p>Modern Cuts for Modern Men.<br />Walk in. Level up.</p>
-      </div>
-
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-social">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
-          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
-          <a href="#" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a>
-          <a href="https://wa.me/60123456789" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">Burger<span>Byte</span></div>
+          <p>Delicious Burgers Made Fresh Daily.<br />Kuala Lumpur's favourite smash burger spot.</p>
+        </div>
+        <div class="footer-col">
+          <strong>Quick Links</strong>
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#promo">Promo</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <strong>Get in Touch</strong>
+          <a href="https://wa.me/60123456789" target="_blank">WhatsApp Us</a>
+          <a href="mailto:hello@burgerbyte.my">hello@burgerbyte.my</a>
+          <a href="#">📍 View on Maps</a>
         </div>
       </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 FadeLab Barbers. All rights reserved. Crafted with precision.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Burger Byte. All rights reserved.</p>
+        <p>Made with 🔥 in Kuala Lumpur</p>
+      </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
