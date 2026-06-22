@@ -1,12 +1,3 @@
-/* =====================================================
-   BURGER BYTE — script.js
-   Features:
-   - Navbar scroll effect
-   - Hamburger mobile drawer
-   - Menu tab switching
-   - Smooth scroll navigation
-===================================================== */
-
 'use strict';
 
 /* ============================================================
