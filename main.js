@@ -54,7 +54,10 @@ document.addEventListener('keydown', (e) => {
 ============================================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const targetId = this.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const target = document.querySelector(targetId);
     if (!target) return;
 
     e.preventDefault();
