@@ -90,9 +90,65 @@ tabBtns.forEach(btn => {
   });
 });
 
+/* ============================================================
+   5. WHATSAPP MENU ORDERING
+============================================================ */
+const whatsappNumber = '60123456789';
+
+function orderMenuItem(card) {
+  const name = card.querySelector('h3, h4')?.textContent.trim();
+  const price = card.querySelector('.menu-price, .side-price')?.textContent.trim();
+
+  if (!name) return;
+
+  const quantityInput = window.prompt(`Quantity for ${name}:`, '1');
+  if (quantityInput === null) return;
+
+  const quantity = Number(quantityInput.trim());
+  if (!Number.isInteger(quantity) || quantity < 1) {
+    window.alert('Please enter a valid quantity (1 or more).');
+    return;
+  }
+
+  const message = [
+    'Hi Burger Byte! I would like to order:',
+    '',
+    `Menu: ${name}`,
+    `Quantity: ${quantity}`,
+    price ? `Price: ${price} each` : ''
+  ].filter(Boolean).join('\n');
+
+  window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+document.querySelectorAll('.menu-card .btn-sm').forEach(button => {
+  button.removeAttribute('href');
+  button.setAttribute('role', 'button');
+  button.setAttribute('tabindex', '0');
+  button.addEventListener('click', event => {
+    event.preventDefault();
+    orderMenuItem(button.closest('.menu-card'));
+  });
+  button.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      orderMenuItem(button.closest('.menu-card'));
+    }
+  });
+});
+
+document.querySelectorAll('.side-card').forEach(card => {
+  const orderButton = document.createElement('button');
+  orderButton.type = 'button';
+  orderButton.className = 'btn btn-sm side-order-btn';
+  orderButton.textContent = 'Order';
+  orderButton.addEventListener('click', () => orderMenuItem(card));
+  card.appendChild(orderButton);
+});
+
 
 /* ============================================================
-   5. PAGE LOAD
+   6. PAGE LOAD
 ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('%cBurger Byte 🔥', 'color:#E31B1B;font-family:sans-serif;font-size:18px;font-weight:bold;');

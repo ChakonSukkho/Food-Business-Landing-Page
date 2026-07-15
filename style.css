@@ -552,7 +552,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   font-weight: 700;
   color: var(--red);
   white-space: nowrap;
-  margin-left: auto;
+  flex-shrink: 0;
+}
+.side-order-btn {
+  border: 0;
+  cursor: pointer;
   flex-shrink: 0;
 }
 
@@ -572,20 +576,34 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   padding: 14px 0;
 }
 .ticker-track {
-  display: inline-flex;
-  gap: 40px;
+  display: flex;
+  width: max-content;
   white-space: nowrap;
-  animation: ticker 22s linear infinite;
+  animation: ticker 18s linear infinite;
   font-family: var(--font-display);
   font-size: 15px;
   letter-spacing: 0.14em;
   color: var(--white);
   will-change: transform;
 }
+.ticker-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  flex-shrink: 0;
+  min-width: 100vw;
+  box-sizing: border-box;
+  padding-right: 40px;
+}
 .ticker-track .dot { color: rgba(255,255,255,0.5); }
 @keyframes ticker {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation-play-state: paused; }
 }
 
 .promo-body {
