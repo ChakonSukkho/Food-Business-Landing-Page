@@ -97,6 +97,18 @@ tabBtns.forEach(btn => {
    5. WHATSAPP MENU ORDERING
 ============================================================ */
 const whatsappNumber = '60123456789';
+const orderModal = document.getElementById('orderModal');
+const orderModalItem = document.getElementById('orderModalItem');
+const orderQuantity = document.getElementById('orderQuantity');
+const orderModalError = document.getElementById('orderModalError');
+let selectedOrder = null;
+
+function closeOrderModal() {
+  orderModal.classList.remove('open');
+  orderModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  selectedOrder = null;
+}
 
 function orderMenuItem(card) {
   const name = card.querySelector('h3, h4')?.textContent.trim();
@@ -104,14 +116,27 @@ function orderMenuItem(card) {
 
   if (!name) return;
 
-  const quantityInput = window.prompt(`Quantity for ${name}:`, '1');
-  if (quantityInput === null) return;
+  selectedOrder = { name, price };
+  orderModalItem.textContent = price ? `${name} · ${price}` : name;
+  orderQuantity.value = '1';
+  orderModalError.textContent = '';
+  orderModal.classList.add('open');
+  orderModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  requestAnimationFrame(() => orderQuantity.focus());
+}
 
-  const quantity = Number(quantityInput.trim());
-  if (!Number.isInteger(quantity) || quantity < 1) {
-    window.alert('Please enter a valid quantity (1 or more).');
+function confirmOrder() {
+  if (!selectedOrder) return;
+
+  const quantity = Number(orderQuantity.value);
+  if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
+    orderModalError.textContent = 'Enter a quantity between 1 and 99.';
+    orderQuantity.focus();
     return;
   }
+
+  const { name, price } = selectedOrder;
 
   const message = [
     'Hi Burger Byte! I would like to order:',
@@ -123,6 +148,21 @@ function orderMenuItem(card) {
 
   window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
+
+document.getElementById('quantityMinus').addEventListener('click', () => {
+  orderQuantity.value = String(Math.max(1, Number(orderQuantity.value) - 1 || 1));
+});
+document.getElementById('quantityPlus').addEventListener('click', () => {
+  orderQuantity.value = String(Math.min(99, (Number(orderQuantity.value) || 0) + 1));
+});
+document.getElementById('confirmOrder').addEventListener('click', confirmOrder);
+document.querySelectorAll('[data-close-modal]').forEach(button => button.addEventListener('click', closeOrderModal));
+orderQuantity.addEventListener('keydown', event => {
+  if (event.key === 'Enter') confirmOrder();
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && orderModal.classList.contains('open')) closeOrderModal();
+});
 
 document.querySelectorAll('.menu-card .btn-sm').forEach(button => {
   button.removeAttribute('href');
